@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Draggable } from 'react-beautiful-dnd';
 import { FlatList } from '@bit/lekanmedia.shared-ui.internal.utils'
 
 function PhotoStack() {
@@ -16,25 +17,6 @@ function PhotoStack() {
   );
 }
 
-export default function ListCard(props) {
-  const { task, dueDate } = props;
-
-  return (
-    <div className="list-card">
-      <div>
-        <span>{task}</span>
-        <i className="material-icons">more_horiz</i>
-      </div>
-
-      <div>
-        <i className="material-icons">schedule</i>
-        <span>Due {dueDate}</span>
-        <PhotoStack />
-      </div>
-    </div>
-  )
-}
-
 export function CreateTaskCard({ onClick }) {
   const submitTask = e => {
     if (e.keyCode === 13 && !e.shiftKey) {
@@ -49,5 +31,33 @@ export function CreateTaskCard({ onClick }) {
     <div className="list-card">
       <textarea name="task" placeholder="New task" onKeyDown={submitTask} />
     </div>
+  )
+}
+
+export default function ListCard(props) {
+  const { task, dueDate, index, id } = props;
+
+  return (
+    <Draggable draggableId={id} index={index}>
+      {(provided, snapshot) => (
+        <div
+          className="list-card"
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <div>
+            <span>{task}</span>
+            <i className="material-icons">more_horiz</i>
+          </div>
+
+          <div>
+            <i className="material-icons">schedule</i>
+            <span>Due {dueDate}</span>
+            <PhotoStack />
+          </div>
+        </div>
+      )}
+    </Draggable>
   )
 }

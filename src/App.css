@@ -38,6 +38,10 @@ body {
   width: 100%;
 }
 
+.drop-region {
+  min-height: 85vh;
+}
+
 .add-button {
   height: 30px;
   background: #ffffff;
@@ -90,6 +94,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10px;
+  user-select: none;
 }
 
 .list-card > div:first-child {
