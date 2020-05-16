@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect} from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { FlatList } from '@bit/lekanmedia.shared-ui.internal.utils'
 
@@ -23,20 +23,30 @@ function PhotoStack() {
 
 export function CreateTaskCard(props) {
   const { finish, list, dispatch } = props;
+  const textArea = useRef();
+
+  useEffect(() => {
+    textArea.current.focus();
+  }, []);
 
   const createTask = e => {
     if (e.keyCode === 13 && !e.shiftKey) {
       e.preventDefault();
+
       const { value } = e.target;
+      const getRandomDay = () => Math.floor(Math.random() * 31);
+
       const task = {
         desc: value,
-        dueDate: 'Aug 8',
+        dueDate: `Aug ${getRandomDay()}`,
         id: `${Math.random()}`
       }
+
       const action = {
         list, task,
         type: 'CREATE_TASK',
       }
+
       dispatch(action);
       finish();
     }
@@ -44,7 +54,7 @@ export function CreateTaskCard(props) {
 
   return (
     <div className="list-card">
-      <textarea placeholder="New task" onKeyDown={createTask} />
+      <textarea ref={textArea} placeholder="New task" onKeyDown={createTask} />
     </div>
   )
 }
