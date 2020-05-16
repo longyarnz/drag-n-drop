@@ -1,6 +1,14 @@
+:root {
+  --font: 'Nunito Sans';
+}
+
 * {
   box-sizing: border-box;
   outline: none;
+}
+
+i {
+  font-weight: normal;
 }
 
 html,
@@ -15,7 +23,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   padding: 20px;
 }
 
@@ -33,14 +41,33 @@ body {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   border: none;
-  transition: all ease .25s;
+  transition: all ease 0.25s;
   cursor: pointer;
 }
 
 .add-button i {
-  color: #23B3E8;
+  color: #23b3e8;
 }
 
 .add-button:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-header {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 19px;
+  font-family: var(--font);
+}
+
+.list-header i {
+  color: #03293D;
+  font-weight: lighter;
+}
+
+.list-header > * {
+  margin: 0px;
 }
