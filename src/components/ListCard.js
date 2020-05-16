@@ -3,7 +3,8 @@ import { Draggable } from 'react-beautiful-dnd';
 import { FlatList } from '@bit/lekanmedia.shared-ui.internal.utils'
 
 function PhotoStack() {
-  const images = ['/head.png', '/head.png', '/head.png', '/head.png'];
+  const images = ['/head.png', '/head.png', '/head.png', '/head.png', '/head.png'];
+  const remainder = images.length % 4;
 
   return (
     <div className="photo-stack">
@@ -11,6 +12,9 @@ function PhotoStack() {
         list={images}
         listView={(src, i) => (
           <img key={i} src={src} alt="task executors" />
+        )}
+        append={remainder && (
+          <span key="append" className="remainder">+{remainder}</span>
         )}
       />
     </div>
