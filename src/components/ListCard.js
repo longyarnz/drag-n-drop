@@ -34,7 +34,6 @@ export function CreateTaskCard(props) {
         type: 'CREATE_TASK',
       }
       dispatch(action);
-      console.table(action);
       finish();
     }
   }
@@ -57,6 +56,7 @@ export default function ListCard(props) {
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
+          style={provided.draggableProps.style}
         >
           <div>
             <span>{desc}</span>

@@ -1,18 +1,20 @@
+const getRandomDay = () => Math.floor(Math.random() * 31);
+
 export const initialState = {
   Backlog: [
     {
-      desc: '1. Apply gredient colours on the dashboard sidenav',
-      dueDate: 'Aug 8',
+      desc: '1. Apply gradient colours on the dashboard sidenav',
+      dueDate: `Aug ${getRandomDay()}`,
       id: `${Math.random()}`
     },
     {
-      desc: '2. Detach gredient colours on the dashboard sidenav',
-      dueDate: 'Aug 8',
+      desc: '2. Detach gradient colours on the dashboard sidenav',
+      dueDate: `Aug ${getRandomDay()}`,
       id: `${Math.random()}`
     },
     {
-      desc: '3. Release gredient colours on the dashboard sidenav',
-      dueDate: 'Aug 8',
+      desc: '3. Release gradient colours on the dashboard sidenav',
+      dueDate: `Aug ${getRandomDay()}`,
       id: `${Math.random()}`
     }
   ],
@@ -47,7 +49,7 @@ export function reducer(state, action) {
         to.splice(destination.index, 0, dragged);
         return { ...state, [source.droppableId]: from, [destination.droppableId]: to}
       }
-      
+
     default:
       return state;
   }

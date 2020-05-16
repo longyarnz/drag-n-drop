@@ -10,14 +10,16 @@ export default function List(props) {
   const [isCreating, setIsCreating] = useState(false);
   const { title, store } = props;
   const [state, dispatch] = store;
-  const addTask = () => setIsCreating(true);
-  const toggle = () => setIsCreating(false);
+  const toggle = () => setIsCreating(!isCreating);
+  const onDragOverStyle = {
+    background: 'rgba(229, 229, 229, .8)',
+  }
 
   return (
     <div className="wrapper">
       <ListHeader title={title} />
 
-      <AddButton onClick={addTask} />
+      <AddButton active={isCreating} onClick={toggle} />
 
       <ShouldRender if={isCreating}>
         <CreateTaskCard
@@ -29,7 +31,11 @@ export default function List(props) {
 
       <Droppable droppableId={title}>
         {(provided, snapshot) => (
-          <div className="drop-region" ref={provided.innerRef}>
+          <div
+            className="drop-region"
+            ref={provided.innerRef}
+            style={snapshot.isDraggingOver ? onDragOverStyle : null}
+          >
             <FlatList
               list={state[title]}
               listView={(card, index) => (
