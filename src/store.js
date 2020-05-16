@@ -1,23 +1,5 @@
-const getRandomDay = () => Math.floor(Math.random() * 31);
-
 export const initialState = {
-  Backlog: [
-    {
-      desc: '1. Apply gradient colours on the dashboard sidenav',
-      dueDate: `Aug ${getRandomDay()}`,
-      id: `${Math.random()}`
-    },
-    {
-      desc: '2. Detach gradient colours on the dashboard sidenav',
-      dueDate: `Aug ${getRandomDay()}`,
-      id: `${Math.random()}`
-    },
-    {
-      desc: '3. Release gradient colours on the dashboard sidenav',
-      dueDate: `Aug ${getRandomDay()}`,
-      id: `${Math.random()}`
-    }
-  ],
+  Backlog: [],
   Todo: [],
   'In Progress': [],
   'In Review': [],
