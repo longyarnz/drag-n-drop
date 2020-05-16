@@ -79,7 +79,7 @@ body {
 }
 
 .list-header i {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .list-header > * {
@@ -109,7 +109,7 @@ body {
 }
 
 .list-card > div:first-child i {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .list-card > div:last-child {
