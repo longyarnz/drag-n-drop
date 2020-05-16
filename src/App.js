@@ -11,8 +11,8 @@ function App() {
   const shuffleState = context => {
     const [, dispatch] = store;
     dispatch({
-      type: 'SHUFFLE_STATE',
-      payload: context
+      context,
+      type: 'SHUFFLE_LIST',
     });
   }
 
