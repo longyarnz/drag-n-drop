@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/drag-n-drop/static/css/main.2fd4d216.chunk.css",
-    "main.js": "/drag-n-drop/static/js/main.fd200407.chunk.js",
-    "main.js.map": "/drag-n-drop/static/js/main.fd200407.chunk.js.map",
+    "main.js": "/drag-n-drop/static/js/main.399d9a58.chunk.js",
+    "main.js.map": "/drag-n-drop/static/js/main.399d9a58.chunk.js.map",
     "runtime-main.js": "/drag-n-drop/static/js/runtime-main.649f7655.js",
     "runtime-main.js.map": "/drag-n-drop/static/js/runtime-main.649f7655.js.map",
     "static/js/2.7ce8252e.chunk.js": "/drag-n-drop/static/js/2.7ce8252e.chunk.js",
     "static/js/2.7ce8252e.chunk.js.map": "/drag-n-drop/static/js/2.7ce8252e.chunk.js.map",
     "index.html": "/drag-n-drop/index.html",
-    "precache-manifest.61d93d272ac48f63792136186b8adc7e.js": "/drag-n-drop/precache-manifest.61d93d272ac48f63792136186b8adc7e.js",
+    "precache-manifest.4b4068bbe241ee8f17fba8549170cddd.js": "/drag-n-drop/precache-manifest.4b4068bbe241ee8f17fba8549170cddd.js",
     "service-worker.js": "/drag-n-drop/service-worker.js",
     "static/css/main.2fd4d216.chunk.css.map": "/drag-n-drop/static/css/main.2fd4d216.chunk.css.map",
     "static/js/2.7ce8252e.chunk.js.LICENSE.txt": "/drag-n-drop/static/js/2.7ce8252e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.649f7655.js",
     "static/js/2.7ce8252e.chunk.js",
     "static/css/main.2fd4d216.chunk.css",
-    "static/js/main.fd200407.chunk.js"
+    "static/js/main.399d9a58.chunk.js"
   ]
 }
