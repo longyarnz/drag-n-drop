@@ -1,13 +1,15 @@
 {
-  "name": "drag_n_drop",
+  "name": "drag",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://longyarnz.github.io/drag-n-drop",
   "dependencies": {
     "@bit/lekanmedia.shared-ui.internal.should-render": "^1.0.0",
     "@bit/lekanmedia.shared-ui.internal.utils": "^0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "gh-pages": "^2.2.0",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.13.1",
@@ -18,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
