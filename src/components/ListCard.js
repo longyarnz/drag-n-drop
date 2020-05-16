@@ -35,12 +35,13 @@ export default function ListCard(props) {
   )
 }
 
-export function CreateTaskCard() {
+export function CreateTaskCard({ onClick }) {
   const submitTask = e => {
     if (e.keyCode === 13 && !e.shiftKey) {
       e.preventDefault();
       const task = e.target.value;
       console.log(task);
+      onClick();
     }
   }
 
