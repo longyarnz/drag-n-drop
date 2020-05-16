@@ -9,7 +9,7 @@ import { FlatList } from '@bit/lekanmedia.shared-ui.internal.utils';
 export default function List(props) {
   const [isCreating, setIsCreating] = useState(false);
   const { title, store } = props;
-  const [state] = store;
+  const [state, dispatch] = store;
   const addTask = () => setIsCreating(true);
   const toggle = () => setIsCreating(false);
 
@@ -20,7 +20,11 @@ export default function List(props) {
       <AddButton onClick={addTask} />
 
       <ShouldRender if={isCreating}>
-        <CreateTaskCard onClick={toggle} />
+        <CreateTaskCard
+          finish={toggle}
+          list={title}
+          dispatch={dispatch}
+        />
       </ShouldRender>
 
       <Droppable droppableId={title}>
@@ -33,7 +37,7 @@ export default function List(props) {
                   id={card.id}
                   key={card.id}
                   index={index}
-                  task={card.task}
+                  desc={card.desc}
                   dueDate={card.dueDate}
                 />
               )}
