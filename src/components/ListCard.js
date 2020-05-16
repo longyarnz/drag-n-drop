@@ -3,7 +3,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { FlatList } from '@bit/lekanmedia.shared-ui.internal.utils'
 
 function PhotoStack() {
-  const images = ['/head.png', '/head.png', '/head.png', '/head.png', '/head.png'];
+  const images = ['head.png', 'head.png', 'head.png', 'head.png', 'head.png'];
   const remainder = images.length % 4;
 
   return (
@@ -32,12 +32,14 @@ export function CreateTaskCard(props) {
   const createTask = e => {
     if (e.keyCode === 13 && !e.shiftKey) {
       e.preventDefault();
-
       const { value } = e.target;
+      const isEmptyString = !/\w/g.test(value);
+      if (isEmptyString) return;
+
       const getRandomDay = () => Math.floor(Math.random() * 31);
 
       const task = {
-        desc: value,
+        desc: value.trim(),
         dueDate: `Aug ${getRandomDay()}`,
         id: `${Math.random()}`
       }
