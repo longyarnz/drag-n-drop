@@ -15,7 +15,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         command: |
-          . ~/.bashrc
-          ls -a
-          cat ~/.bashrc
-          deploy_to_staging staging
+          . ~/.bashrc && deploy_to_staging staging
