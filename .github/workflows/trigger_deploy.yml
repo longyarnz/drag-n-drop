@@ -1,0 +1,21 @@
+name: Manually deploy to staging
+
+on: workflow_dispatch
+
+jobs:
+  staging:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to staging server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        command_timeout: 25m
+        debug: true
+        script: |
+            BRANCH=$(echo ${{ github.ref }} | cut -c 12-)
+            echo $BRANCH
+            # ~/deploy.sh --staging --install-modules --branch $BRANCH
+            

@@ -1,0 +1,19 @@
+name: Auto deploy to use-notes
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to production server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        command_timeout: 25m
+        debug: true
+        script: ~/deploy.sh --staging --install-modules --branch staging
