@@ -3,10 +3,10 @@ name: Manually deploy to staging
 on: workflow_dispatch
 
 jobs:
-  build:
+  staging:
     runs-on: ubuntu-latest
     steps:
-    - name: SSH into server
+    - name: Deploy to staging server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
