@@ -16,5 +16,5 @@ jobs:
         debug: true
         script: |
             # ~/deploy.sh --staging --install-modules --branch staging
-            BRANCH $(echo ${{ github.ref }} | cut -c 12-)
+            BRANCH=$(echo ${{ github.ref }} | cut -c 12-)
             echo $BRANCH
