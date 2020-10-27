@@ -14,4 +14,4 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        command: deploy --staging --branch staging
+        command: ~/deploy.sh --staging --branch staging
