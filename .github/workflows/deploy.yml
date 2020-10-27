@@ -1,17 +1,15 @@
 name: Auto deploy to use-notes
 
-on:
-  push:
-    branches: [ master ]
+on: workflow_dispatch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: SSH into server
-      uses: garygrossgarten/github-action-ssh@release
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        command: ~/deploy.sh --staging --branch staging
+        command: ~/deploy.sh --staging --install-modules --branch staging
