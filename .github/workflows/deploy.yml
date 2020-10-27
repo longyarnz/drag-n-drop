@@ -1,6 +1,8 @@
 name: Auto deploy to use-notes
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   build:
