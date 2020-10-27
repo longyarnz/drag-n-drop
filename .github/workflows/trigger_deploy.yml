@@ -15,6 +15,6 @@ jobs:
         command_timeout: 25m
         debug: true
         script: |
-            # ~/deploy.sh --staging --install-modules --branch staging
             BRANCH=$(echo ${{ github.ref }} | cut -c 12-)
-            echo $BRANCH
+            ~/deploy.sh --staging --install-modules --branch $BRANCH
+            
