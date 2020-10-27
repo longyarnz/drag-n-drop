@@ -12,4 +12,4 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        command: ~/deploy.sh --staging --install-modules --branch staging
+        script: ~/deploy.sh --staging --install-modules --branch staging
