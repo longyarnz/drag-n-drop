@@ -1,4 +1,4 @@
-name: Auto deploy to use-notes
+name: Manually deploy to staging
 
 on: workflow_dispatch
 
