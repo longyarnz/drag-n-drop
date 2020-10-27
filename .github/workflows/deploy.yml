@@ -9,9 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: SSH into server
-      uses: appleboy/ssh-action@master
+      uses: garygrossgarten/github-action-ssh@release
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        script: deploy_to_staging staging
+        command: |
+          ll
+          cat ~/.bashrc
+          deploy_to_staging staging
