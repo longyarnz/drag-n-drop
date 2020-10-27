@@ -5,10 +5,10 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  production:
     runs-on: ubuntu-latest
     steps:
-    - name: SSH into server
+    - name: Deploy to production server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
